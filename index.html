@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            padding: 20px;
+            padding-left: 100px;
+            border-radius: 10px;
+        }
+        button{
+            padding: 20px;
+            color: rgb(5, 5, 5);
+            background-color: yellow;
+            border-radius: 10px;
+        }
+        .container{ 
+             height: 100vh;
+             display:flex;
+             justify-content: center;
+             align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div>
+    <input type="text" id="email" placeholder="Email"><br>
+    <input type="password" id="pass" placeholder="password"><br>
+    <button onclick="fun()">button</button>
+    </div>
+    </div>
+    <script>
+        function fun(){
+           let a=document.getElementById("email").value
+           let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+           if(!emailRegex.test(a))    
+           {
+              alert("Wrong mail")
+           } 
+           let pass=document.getElementById("pass").value
+           var passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+           if(!passwordRegex.test(pass))
+           {
+               alert("password contains one upper case letter and one lower case letter and one special character")
+           }
+        }   
+    </script>
+</body>
+</html>
